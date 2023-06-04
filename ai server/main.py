@@ -5,7 +5,7 @@ from langchain import HuggingFaceHub, LLMChain
 from fastapi.middleware.cors import CORSMiddleware
 
 
-openai_api_key = "OPENAI_API_KEY"
+openai_api_key = "YOUR_API_KEY_HERE"
 
 app = FastAPI()
 
@@ -30,7 +30,7 @@ async def root():
     return {"message": "Hello World"}
 
 
-os.environ['HUGGINGFACEHUB_API_TOKEN'] = 'HUGGINGFACEHUB_API_TOKEN'
+os.environ['HUGGINGFACEHUB_API_TOKEN'] = 'YOUR_API_TOKEN_HERE'
 
 
 @app.post("/dolly/{text}")

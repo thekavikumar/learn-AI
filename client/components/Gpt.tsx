@@ -74,11 +74,13 @@ export const Gpt: FC<InputProps> = ({ dbData }) => {
           <span className="font-bold text-xl">Generate</span>
         </button>
       </div>
-      <div className="">
-        {dbData.attributes.model != "image" && data !== "" && (
-          <p className="text-xl font-bold">Response: </p>
-        )}
-      </div>
+      {dbData.attributes.model != "image" && (
+        <div className="">
+          {data !== "" && <p className="text-xl font-bold">Response: </p>}
+          <p className="text-lg">{data}</p>
+        </div>
+      )}
+
       {dbData.attributes.model == "image" && data !== "" && (
         <div className="">
           {data !== "" && (
